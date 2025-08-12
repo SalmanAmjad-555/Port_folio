@@ -6,19 +6,22 @@
     <title>portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+
 </head>
 <body>
     <header class="header">
         <a href="#home" class="logo">Salman
             <span>Amjad</span>
         </a>
-        <box-icon name='menu' id="menu_icon"></box-icon>
+        <i class='bx bx-menu' id="menu_icon"></i>
+
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
-            <a href="#education">Education</a>
-            <a href="#services">Services</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
+            <a href="About.html">About</a>
+            <a href="project.html">Projects</a>
+            <a href="contact.html">Contact</a>
+          
         </nav>
     </header>
 
@@ -139,6 +142,16 @@
         </div>
     </section>
     
- <script src="script.js"></script>   
+  
 </body>
+ <script >
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuIcon = document.getElementById('menu_icon');
+      const navbar = document.querySelector('.navbar');
+
+      menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
+    });
+ </script> 
 </html>

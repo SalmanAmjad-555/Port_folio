@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Salman Amjad</title>
+  <link rel="stylesheet" href="project.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">Salman <span>Amjad</span></a>
+     <i class='bx bx-menu' id="menu_icon"></i>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="projects" id="projects">
+    <h2 class="heading">My Projects</h2>
+    <div class="projects-container">
+
+      <div class="project-card">
+        <img src="images/project1.jpg" alt="Project 1" />
+        <div class="project-info">
+          <h3>Portfolio Website</h3>
+          <p>A fully responsive personal website with sections like Home, About, Projects, and Contact, built using HTML, CSS, and JavaScript.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project2.png" alt="Project 2" />
+        <div class="project-info">
+          <h3>Weather App</h3>
+          <p>A weather application using React.js and OpenWeather API to display real-time weather data based on location search.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project3.png" alt="Project 3" />
+        <div class="project-info">
+          <h3>To-Do List</h3>
+          <p>A dynamic to-do list web app with add/remove functionality and local storage support, built using vanilla JS.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+<script>
+     document.addEventListener("DOMContentLoaded", () => {
+      const menuIcon = document.getElementById('menu_icon');
+      const navbar = document.querySelector('.navbar');
+
+      menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('show');
+      });
+    });
+</script>
+</html>

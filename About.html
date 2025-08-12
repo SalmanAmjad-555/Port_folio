@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Salman Amjad</title>
+  <link rel="stylesheet" href="about.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">Salman <span>Amjad</span></a>
+     <i class='bx bx-menu' id="menu_icon"></i>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="images/img1.webp" alt="Salman Profile Picture" />
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I'm Salman Amjad, a passionate web developer with a strong foundation in front-end development using HTML, CSS, and JavaScript. I specialize in building responsive and visually appealing web experiences using React.js and modern tools.</p>
+
+        <h3>Skills</h3>
+        <ul class="skills-list">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>React.js</li>
+          <li>Git & GitHub</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</body>
+<script>
+     document.addEventListener("DOMContentLoaded", () => {
+      const menuIcon = document.getElementById('menu_icon');
+      const navbar = document.querySelector('.navbar');
+
+      menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('show');
+      });
+    });
+</script>
+</html>

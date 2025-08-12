@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Salman Amjad</title>
+  <link rel="stylesheet" href="contact.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">Salman <span>Amjad</span></a>
+     <i class='bx bx-menu' id="menu_icon"></i>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact" id="contact">
+    <h2 class="heading">Get In Touch</h2>
+    <form class="contact-form">
+      <div class="input-group">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+      </div>
+      <textarea placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+</body>
+<script>
+     document.addEventListener("DOMContentLoaded", () => {
+      const menuIcon = document.getElementById('menu_icon');
+      const navbar = document.querySelector('.navbar');
+
+      menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('show');
+      });
+    });
+</script>
+</html>
