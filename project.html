@@ -15,7 +15,7 @@
     <nav class="navbar">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="projects.html" class="active">Projects</a>
+      <a href="project.html" class="active">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -24,36 +24,75 @@
     <h2 class="heading">My Projects</h2>
     <div class="projects-container">
 
+      <!-- Project 1 -->
       <div class="project-card">
-        <img src="images/project1.jpg" alt="Project 1" />
+        <span class="badge">Featured</span>
+        <img src="images/project1.jpg" alt="SAAS Website" />
         <div class="project-info">
-          <h3>Portfolio Website</h3>
-          <p>A fully responsive personal website with sections like Home, About, Projects, and Contact, built using HTML, CSS, and JavaScript.</p>
+          <h3>SAAS Website</h3>
+          <p>A fully responsive SAAS website with React js and Tailwind css.</p>
+          <a href="https://salmanamjad-555.github.io/SAAS_App/" target="_blank" class="project-link">
+            View Live <i class='bx bx-link-external'></i>
+          </a>
         </div>
       </div>
 
+      <!-- Project 2 -->
       <div class="project-card">
-        <img src="images/project2.png" alt="Project 2" />
+        <img src="images/project2.png" alt="Weather Check Website" />
         <div class="project-info">
-          <h3>Weather App</h3>
+          <h3>Weather Check Website</h3>
           <p>A weather application using React.js and OpenWeather API to display real-time weather data based on location search.</p>
+          <a href=" https://salmanamjad-555.github.io/Weather_App/" target="_blank" class="project-link">
+            View Live <i class='bx bx-link-external'></i>
+          </a>
         </div>
       </div>
 
+      <!-- Project 3 -->
       <div class="project-card">
-        <img src="images/project3.png" alt="Project 3" />
+        <img src="images/project3.jpg" alt="To-Do List" />
         <div class="project-info">
-          <h3>To-Do List</h3>
-          <p>A dynamic to-do list web app with add/remove functionality and local storage support, built using vanilla JS.</p>
+          <h3>To-Do List Website</h3>
+          <p>A dynamic to-do list web app with add/remove functionality and local storage support, built using vanilla JavaScript.</p>
+          <a href="https://salmanamjad-555.github.io/To_do/" target="_blank" class="project-link">
+            View Live <i class='bx bx-link-external'></i>
+          </a>
         </div>
       </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <img src="images/project4.jpg" alt="E-commerce Website" />
+        <div class="project-info">
+          <h3>Gym Website</h3>
+          <p>A complete online gym website that provide instruction for the body builders and that is built on the React js and Tailwind css.</p>
+          <a href="https://salmanamjad-555.github.io/Gym-App/" target="_blank" class="project-link">
+            View Live <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card">
+        <span class="badge">New</span>
+        <img src="images/project5.jpg" alt="HMS Platform" />
+        <div class="project-info">
+          <h3>Hospital Managment System Platform</h3>
+          <p>A full-featured HMS platform with user authentication and more features and built on the top of the React js and Tailwind css .</p>
+          <a href="https://salmanamjad-555.github.io/Hospital-Management-System/" target="_blank" class="project-link">
+            View Live <i class='bx bx-link-external'></i>
+          </a>
+        </div>
+      </div>
+
+     
 
     </div>
   </section>
 
-</body>
-<script>
-     document.addEventListener("DOMContentLoaded", () => {
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
       const menuIcon = document.getElementById('menu_icon');
       const navbar = document.querySelector('.navbar');
 
@@ -61,5 +100,6 @@
         navbar.classList.toggle('show');
       });
     });
-</script>
+  </script>
+</body>
 </html>

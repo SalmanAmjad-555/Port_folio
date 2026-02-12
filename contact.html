@@ -1,46 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Salman Amjad</title>
-  <link rel="stylesheet" href="contact.css" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Salman Amjad</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #050a0a;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.8rem 10%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            color: #fff;
+            font-weight: 800;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .logo span { color: #00e5ff; }
+
+        .navbar a {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-left: 2.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+        .navbar a:hover { color: #00e5ff; border-bottom: 2px solid #00e5ff; }
+
+        #menu_icon {
+            font-size: 3rem;
+            color: #00e5ff;
+            display: none;
+            cursor: pointer;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            min-height: 100vh;
+            padding: 10rem 10% 6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at 50% 40%, rgba(0, 229, 255, 0.06) 0%, transparent 65%);
+        }
+
+        .section-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+        .section-title span { color: #00e5ff; }
+
+        .section-subtitle {
+            font-size: 1.4rem;
+            color: #888;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        /* ===== CONTACT CARDS ===== */
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 5rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1.5px solid rgba(0, 229, 255, 0.25);
+            border-radius: 2.5rem;
+            padding: 4rem 3.5rem;
+            flex: 1;
+            min-width: 260px;
+            max-width: 360px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 2.5rem;
+            background: radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.07), transparent 70%);
+            opacity: 0;
+            transition: 0.35s;
+        }
+
+        .contact-card:hover {
+            border-color: #00e5ff;
+            transform: translateY(-12px);
+            box-shadow: 0 0 50px rgba(0, 229, 255, 0.25);
+        }
+        .contact-card:hover::before { opacity: 1; }
+
+        .contact-card .icon-wrap {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 229, 255, 0.1);
+            border: 2px solid rgba(0, 229, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            transition: 0.3s;
+        }
+        .contact-card:hover .icon-wrap {
+            background: rgba(0, 229, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+        }
+
+        .contact-card .icon-wrap i {
+            font-size: 3.5rem;
+            color: #00e5ff;
+        }
+
+        .contact-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #aaa;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-card .contact-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.8rem;
+            word-break: break-word;
+        }
+
+        .contact-card .contact-link {
+            display: inline-block;
+            padding: 0.8rem 2.2rem;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1.5px solid rgba(0, 229, 255, 0.4);
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00e5ff;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        .contact-card .contact-link:hover {
+            background: #00e5ff;
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+
+        /* ===== AVAILABILITY BANNER ===== */
+        .availability {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(0, 229, 255, 0.05);
+            border: 1.5px solid rgba(0, 229, 255, 0.3);
+            border-radius: 2rem;
+            padding: 2.5rem 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .availability .dot {
+            width: 14px;
+            height: 14px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88, 0 0 20px rgba(0, 255, 136, 0.4);
+            flex-shrink: 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.7; }
+        }
+
+        .availability p {
+            font-size: 1.3rem;
+            color: #ccc;
+            flex: 1;
+        }
+        .availability p strong { color: #fff; }
+
+        .availability a {
+            text-decoration: none;
+            background: #00e5ff;
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .availability a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+        }
+
+        /* ===== BACK BUTTON ===== */
+        .back-btn {
+            margin-top: 3rem;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: #00e5ff;
+            border: 2px solid #00e5ff;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        .back-btn:hover {
+            background: #00e5ff;
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            #menu_icon { display: block; }
+            .navbar {
+                position: absolute;
+                top: 100%; right: 5%;
+                background: rgba(0,0,0,0.97);
+                flex-direction: column;
+                padding: 2rem;
+                border-radius: 12px;
+                border: 1px solid rgba(0,229,255,0.2);
+                display: none;
+                min-width: 180px;
+            }
+            .navbar.active { display: flex; }
+            .navbar a { margin-left: 0; margin-bottom: 1rem; }
+        }
+
+        @media (max-width: 768px) {
+            .contact-section { padding: 9rem 6% 5rem; }
+            .section-title { font-size: 3.5rem; }
+            .contact-cards { gap: 2rem; }
+            .contact-card { padding: 3rem 2.5rem; }
+            .availability { padding: 2rem; }
+        }
+
+        @media (max-width: 576px) {
+            .header { padding: 1.2rem 5%; }
+            .logo { font-size: 1.8rem; }
+            .section-title { font-size: 2.8rem; }
+            .section-subtitle { font-size: 1.2rem; }
+            .contact-card { max-width: 100%; min-width: 100%; }
+            .contact-value { font-size: 1.4rem; }
+            .availability { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
 <body>
+    <header class="header">
+        <a href="index.html" class="logo">Salman<span>Amjad</span></a>
+        <i class='bx bx-menu' id="menu_icon"></i>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="project.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-  <header class="header">
-    <a href="index.html" class="logo">Salman <span>Amjad</span></a>
-     <i class='bx bx-menu' id="menu_icon"></i>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="project.html">Projects</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-  </header>
+    <section class="contact-section">
+        <h1 class="section-title">Get In <span>Touch</span></h1>
+        <p class="section-subtitle">Feel free to reach out — I'm always open to new opportunities.</p>
 
-  <section class="contact" id="contact">
-    <h2 class="heading">Get In Touch</h2>
-    <form class="contact-form">
-      <div class="input-group">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-      </div>
-      <textarea placeholder="Your Message" rows="6" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
+        <div class="contact-cards">
 
+            <!-- Phone Card -->
+            <div class="contact-card">
+                <div class="icon-wrap">
+                    <i class='bx bxs-phone-call'></i>
+                </div>
+                <h3>Phone</h3>
+                <div class="contact-value">0324-3503403</div>
+                <a href="tel:03243503403" class="contact-link">
+                    <i class='bx bxs-phone'></i> Call Now
+                </a>
+            </div>
+
+            <!-- Email Card -->
+            <div class="contact-card">
+                <div class="icon-wrap">
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <h3>Email</h3>
+                <div class="contact-value">msalmanamjad2@gmail.com</div>
+                <a href="mailto:msalmanamjad2@gmail.com" class="contact-link">
+                    <i class='bx bx-send'></i> Send Email
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Availability -->
+        <div class="availability">
+            <div class="dot"></div>
+            <p><strong>Currently Available</strong> for freelance projects and full-time opportunities.</p>
+            <a href="hire.html">Hire Me</a>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuIcon = document.getElementById('menu_icon');
+            const navbar = document.querySelector('.navbar');
+            menuIcon.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
-<script>
-     document.addEventListener("DOMContentLoaded", () => {
-      const menuIcon = document.getElementById('menu_icon');
-      const navbar = document.querySelector('.navbar');
-
-      menuIcon.addEventListener('click', () => {
-        navbar.classList.toggle('show');
-      });
-    });
-</script>
 </html>
