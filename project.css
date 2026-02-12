@@ -95,7 +95,7 @@ body {
     display: block;
     width: 120px;
     height: 4px;
-    background: #00e5ff;
+    /* background: #00e5ff; */
     margin: 1rem auto 3rem;
 }
 
